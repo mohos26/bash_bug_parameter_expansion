@@ -1,0 +1,22 @@
+Problem description:
+When using parameter expansion with a variable containing a space, and then
+concatenating it with a string followed by $, an extra leading space appears
+before the text.
+
+Steps to reproduce:
+
+export S=" "
+echo $S"hello"$
+
+Actual output:
+ hello$
+
+Expected output:
+hello$
+
+Environment:
+OS: Ubuntu 22.04 (Linux 5.15)
+Locale: en_US.UTF-8
+
+This behavior does not seem documented in POSIX or in the Bash source code.
+Please investigate and correct the parameter-expansion behavior so it matches the expected output.
